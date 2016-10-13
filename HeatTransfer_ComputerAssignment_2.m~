@@ -48,13 +48,12 @@ grid10 = heatGaussSeidel(Plate, 75, 25, 25, 25, 10, 10);
 grid20 = heatGaussSeidel(Plate, 75, 25, 25, 25, 20, 20);
 grid30 = heatGaussSeidel(Plate, 75, 25, 25, 25, 30, 30);
 
-%checkError for grid 10
+%checkError
 interp = doubleinterpolate(7.5, 6, 9, 5, 4, 6, grid10(3,3), grid10(3,4), grid10(4,3), grid10(4,4));
 error = errorcheck(PointTemp(1), interp)
-interp = doubleinterpolate(7.5, 6, 9, 15, 14, 16, grid10(8,3), grid10(8,4), grid10(9,3), grid10(9,4));
-error = errorcheck(PointTemp(2), interp)
-error = errorcheck(PointTemp(3), grid10(6,6))
-interp = doubleinterpolate(22.5, 21, 24, 5, 4, 6, grid10(3,8), grid10(3,9), grid10(4,8), grid10(4,9));
-error = errorcheck(PointTemp(1), interp)
-interp = doubleinterpolate(22.5, 21, 24, 15, 14, 16, grid10(8,8), grid10(8,9), grid10(9,8), grid10(9,9));
-error = errorcheck(PointTemp(2), interp)
+interp = doubleinterpolate(7.5, 6, 9, 5, 4, 6, grid10(3,3), grid10(3,4), grid10(4,3), grid10(4,4));
+% error = errorcheck(PointTemp(2), interp)
+% error = errorcheck(PointTemp(3), grid10(6,6))
+% error = errorcheck(PointTemp(4), grid10(6,6))
+% error = errorcheck(PointTemp(5), grid10(6,6))
+
