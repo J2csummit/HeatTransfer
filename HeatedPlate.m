@@ -113,7 +113,7 @@ classdef HeatedPlate
             disp('The values of the terms are:')
             disp(terms)
             figure
-            plot(tVn)
+            %%plot(tVn)
         end
         
         function [ T, tVn, termCount, terms  ] = heatGaussSeidel( obj, Ttop, Tleft, Tbottom, Tright, n, m )

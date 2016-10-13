@@ -3,7 +3,7 @@
 %{
     Consider a rectangular plate 20 cm x 30 cm. 
     Three of the sides (left, bottom, and right side) are maintained are at
-    a constant temperature of 25 ?C whereas the top side is maintained at 75 ?C. 
+    a constant temperature of 25 C whereas the top side is maintained at 75 C. 
     Write a general computer program to solve for the steady state 
     temperature solution of the plate for any grid arbitrary grid mesh n x m. 
     Obtain a temperature solution using a grid mesh of 10x10, 20x20, and 30x30. 
@@ -35,7 +35,14 @@ Points = [W/4, H/4; 3*W/4, H/4; W/2, H/2; W/4, 3*H/4; 3*W/4, 3*H/4];
 % Create Heated Plate
 Plate = HeatedPlate(W, H, T1, T2, Points);
 
+while i <= length(Points(:,1))
+    heatSeperationVariables(Plate, i);
+    i = i + 1;
+end
+
 % Run GaussSeidel
 heatGaussSeidel(Plate, 75, 25, 25, 25, 10, 10);
 heatGaussSeidel(Plate, 75, 25, 25, 25, 20, 20);
 heatGaussSeidel(Plate, 75, 25, 25, 25, 30, 30);
+
+
