@@ -139,7 +139,7 @@ classdef HeatedPlate
             grid = vertcat(grid, tBottom);
             
             %GaussSeidel
-            resolution = 0.01; dT = 1; iteration = 1;
+            resolution = 0.001; dT = 1; iteration = 1;
             while dT >= resolution
                 iteration;
                 prevGrid = grid;
