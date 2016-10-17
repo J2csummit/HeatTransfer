@@ -54,36 +54,37 @@ error20 = zeros(1,5);
 error30 = zeros(1,5);
 
 %checkError for grid 10
-interp = doubleinterpolate(7.5, 6, 9, 5, 4, 6, grid10(3,3), grid10(3,4), grid10(4,3), grid10(4,4));
+interp = doubleinterpolate(7.5, 6, 9, 5, 4, 6, grid10(8,2), grid10(8,3), grid10(7,2), grid10(7,3));
 error10(1) = errorcheck(PointTemp(1), interp);
-interp = doubleinterpolate(7.5, 6, 9, 15, 14, 16, grid10(8,3), grid10(8,4), grid10(9,3), grid10(9,4));
+interp = doubleinterpolate(7.5, 6, 9, 15, 14, 16, grid10(8,7), grid10(8,8), grid10(7,7), grid10(7,8));
 error10(2) = errorcheck(PointTemp(2), interp);
-error10(3) = errorcheck(PointTemp(3), grid10(6,6));
-interp = doubleinterpolate(22.5, 21, 24, 5, 4, 6, grid10(3,8), grid10(3,9), grid10(4,8), grid10(4,9));
+error10(3) = errorcheck(PointTemp(3), grid10(5,5));
+interp = doubleinterpolate(22.5, 21, 24, 5, 4, 6, grid10(2,2), grid10(2,3), grid10(3,2), grid10(3,3));
 error10(4) = errorcheck(PointTemp(4), interp);
-interp = doubleinterpolate(22.5, 21, 24, 15, 14, 16, grid10(8,8), grid10(8,9), grid10(9,8), grid10(9,9));
+interp = doubleinterpolate(22.5, 21, 24, 15, 14, 16, grid10(2,7), grid10(2,8), grid10(3,7), grid10(3,8));
 error10(5) = errorcheck(PointTemp(5), interp);
 
 error10
 
 %checkError for grid 20 
-error20(1) = errorcheck(PointTemp(1), grid20(6,6));
-error20(2) = errorcheck(PointTemp(2), grid20(16,6));
-error20(3) = errorcheck(PointTemp(3), grid20(11,11));
-error20(4) = errorcheck(PointTemp(4), grid20(6,15));
-error20(5) = errorcheck(PointTemp(5), grid20(16,15));
+error20(1) = errorcheck(PointTemp(1), grid20(15,5));
+error20(2) = errorcheck(PointTemp(2), grid20(15,15));
+error20(3) = errorcheck(PointTemp(3), grid20(10,10));
+error20(4) = errorcheck(PointTemp(4), grid20(5,5));
+error20(5) = errorcheck(PointTemp(5), grid20(5,15));
 
 error20
 
 %checkError for grid 30
-interp = doubleinterpolate(7.5, 7, 8, 5, 4.666, 5.333, grid30(7,7), grid30(7,8), grid30(8,7), grid30(8,8));
+grid30(24,8)
+interp = doubleinterpolate(7.5, 7, 8, 5, 4.666, 5.333, grid30(23,7), grid30(23,8), grid30(22,7), grid30(22,8));
 error30(1) = errorcheck(PointTemp(1), interp);
-interp = doubleinterpolate(7.5, 7, 8, 15, 14.666, 15.333, grid30(22,7), grid30(23,8), grid30(22,7), grid30(23,8));
+interp = doubleinterpolate(7.5, 7, 8, 15, 14.666, 15.333, grid30(23,22), grid30(23,23), grid30(22,22), grid30(22,23));
 error30(2) = errorcheck(PointTemp(2), interp);
-error30(3) = errorcheck(PointTemp(3), grid30(15,16));
+error30(3) = errorcheck(PointTemp(3), grid30(15,15));
 interp = doubleinterpolate(22.5, 22, 23, 5, 4.666, 5.333, grid30(7,22), grid30(8,23), grid30(8,22), grid30(7,23));
 error30(4) = errorcheck(PointTemp(1), interp);
-interp = doubleinterpolate(22.5, 22, 23, 15, 14.666, 15.333, grid30(22,22), grid30(22,22), grid30(22,23), grid30(23,23));
+interp = doubleinterpolate(22.5, 22, 23, 15, 14.666, 15.333, grid30(22,22), grid30(23,22), grid30(22,23), grid30(23,23));
 error30(5) = errorcheck(PointTemp(2), interp);
 
 error30
