@@ -1,5 +1,5 @@
 function [ q ] = heatSink( w, l )
-%finnedPlate Automatically calculates heat transfer through heat sink
+%heatSink Automatically calculates heat transfer through heat sink
 %   Caclulates the heat transfered through the heat sink given for the
 %   design project. Inputs allow the heat sink to vary with fin width/gap
 %   and with fin length.
