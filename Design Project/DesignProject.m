@@ -52,4 +52,6 @@ while i <= length(w)
     j = 1;
 end
 
-array2table(q,'RowName',{'0.25mm','0.30mm','0.35mm','0.40mm','0.45mm','0.50mm'},'VariableName',{'SixMM','SevenMM','EightMM','NineMM','TenMM'})
+array2table(q,...
+    'RowName',{'0.25mm','0.30mm','0.35mm','0.40mm','0.45mm','0.50mm'},...
+    'VariableName',{'SixMM','SevenMM','EightMM','NineMM','TenMM'})
