@@ -1,0 +1,56 @@
+%% Design Project - Heat Sink %%
+
+% As a means of enhancing heat transfer from high-performance logic chips, 
+% it is common to attach a heat sink to the chip surface in order to increase 
+% the surface area for convection heat transfer. Because of the ease with 
+% which it may be manufactured (by taking orthogonal sawcuts in a block of 
+% material), an attractive option is to use a heat sink consisting of an array 
+% of square fins of width w on a side. The spacing between adjoining fins would 
+% be determined by the width of the sawblade, with the sum of this spacing and 
+% the fin width designated as the fin pitch S. The method by which the heat sink 
+% is joined to the chip would determine the interfacial contact resistance, R?t,c.
+
+% Consider a square chip of width Wc = 16 mm and conditions for which cooling 
+% is provided by a dielectric liquid with T? = 25?C and h = 1500 W/m2-K. The 
+% heat sink is fabricated from copper (k = 400 W/m-K) and its characteristic 
+% dimensions are w = 0.25 mm, and S = 0.50 mm, Lf = 6 mm, and Lb = 3 mm. The 
+% prescribed values of w and S represent minima imposed manufacturing constraints 
+% and the need to maintain adequate flow in the passages between fins.
+
+%% Part A %%
+
+% (a)	If a metallurgical joint provides a contact resistance of R?t,
+% c = 5 x 10-6 m2-K/W and the maximum allowable chip temperature is 85?C,
+% what is the maximum allowable chip power dissipation qc? It can be assumed 
+% that all of the heat to be transferred through the sink
+
+heatSink(0.25, 6)
+
+%% Part B %%
+
+% (b)	It may be possible to increase the heat dissipation by increasing w, 
+% subject to the constraint that (S ? w) ? 0.25 mm and/or increasing Lf  
+% (subject to manufacturing constraints that Lf  ? 10 mm). Assess the effects
+% of such changes for w = 0.25, 0.30, 0.35, 0.40, 0.45, and 0.50 mm and 
+% Lf  = 6, 7, 8, 9, and 10 mm.
+
+% Intialize varying properties
+w = [0.25, 0.30, 0.35, 0.40, 0.45, 0.50];
+l = [6, 7, 8, 9, 10];
+
+% Intialize array to store Q values
+q = zeros(length(w), length(l));
+
+% Loop through all values
+i = 1; j = 1;
+while i <= length(w)
+    while j <= length(l)
+        q(i, j) = heatSink(w(i), l(j));
+        j = j + 1;
+    end
+    i = i + 1;
+    j = 1;
+end
+
+array2table(,...
+    {'0.25mm','0.30mm','0.35mm','0.40mm','0.50mm'},{'6mm','7mm','8mm','9mm','10mm'})
